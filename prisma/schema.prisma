@@ -36,18 +36,18 @@ model Post {
 }
 
 model Comments {
-  commentId  String  @id @default(cuid())
-  comment    String
-  Post       Post?   @relation(fields: [post_id], references: [postId])
-  post_id String?
-  User       User?   @relation(fields: [userId], references: [id])
-  userId     String?
+  commentId String  @id @default(cuid())
+  comment   String
+  Post      Post?   @relation(fields: [post_id], references: [postId])
+  post_id   String?
+  User      User?   @relation(fields: [userId], references: [id])
+  userId    String?
 }
 
 model Like {
-  lId        String  @id @default(cuid())
-  like       Int
-  Post       Post?   @relation(fields: [posts_Id], references: [postId])
+  lId      String  @id @default(cuid())
+  like     Int
+  Post     Post?   @relation(fields: [posts_Id], references: [postId])
   posts_Id String?
 }
 
@@ -56,3 +56,10 @@ model EdResources {
   videoURLs   String
   articleURLs String
 }
+
+model Products {
+  prod_id   String @id @default(cuid())
+  prod_name String
+}
+
+

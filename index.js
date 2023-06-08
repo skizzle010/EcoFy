@@ -11,9 +11,9 @@ app.use(cookieParser());
 
 app.use(express.json());
 app.use('/api', authRoute);
-app.use('/api', commentRoute);
-app.use('/api', likeRoute);
-app.use('/api', postRoute);
+app.use('/api/comment', commentRoute);
+app.use('/api/like', likeRoute);
+app.use('/api/post', postRoute);
 
 
 
