@@ -16,8 +16,10 @@ model User {
   email            String     @unique
   password         String
   bio              String?
+  wallet           Int?
   carbon_footprint Int?
   Admin            Boolean    @default(false)
+  Products         Products[]
   Posts            Post[]
   Comments         Comments[]
 }
@@ -58,8 +60,10 @@ model EdResources {
 }
 
 model Products {
-  prod_id   String @id @default(cuid())
-  prod_name String
+  prod_id   String  @id @default(cuid())
+  prod_name String  @unique
+  price     Int
+  quantity  Int
+  User      User?   @relation(fields: [userId], references: [id])
+  userId    String?
 }
-
-
