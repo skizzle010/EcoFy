@@ -4,6 +4,7 @@ const authRoute = require("./routes/auth");
 const commentRoute = require("./routes/comment");
 const likeRoute = require("./routes/like");
 const postRoute = require("./routes/post");
+const productRoute = require("./routes/products")
 const cookieParser = require("cookie-parser");
 app.use(cookieParser());
 
@@ -14,6 +15,7 @@ app.use('/api', authRoute);
 app.use('/api/comment', commentRoute);
 app.use('/api/like', likeRoute);
 app.use('/api/post', postRoute);
+app.use('/api/products',productRoute)
 
 
 
